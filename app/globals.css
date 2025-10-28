@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap'); */
+
+:root{
+  --bg-dark: #070707;
+  --tile-border: rgba(255,255,255,0.06);
+}
+
+/* Tailwind base */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* base body */
+html,body,#__next{
+  height:100%;
+}
+body{
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.66), rgba(0,0,0,0.9)), #080808;
+  margin:0;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  color: #fff;
+}
+
+/* tiled grid background to mimic screenshot */
+.app-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-image:
+    linear-gradient(90deg, var(--tile-border) 1px, transparent 1px),
+    linear-gradient(180deg, var(--tile-border) 1px, transparent 1px);
+  background-size: 80px 80px;
+  transform: translateZ(0);
+  overflow: hidden;
+}
+/* colored vertical bars positioned left & right */
+.app-bg::before,
+.app-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 56px;
+  filter: blur(10px);
+  opacity: 0.95;
+}
+.app-bg::before {
+  left: 64px;
+  background: linear-gradient(#0f9d58, #0f9d58);
+}
+.app-bg::after {
+  right: 64px;
+  background: linear-gradient(#4285F4, #EA4335);
+}
+
+/* main glass card */
+.glass {
+  width: min(1100px, 92%);
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));
+  box-shadow: 0 12px 40px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.02);
+  backdrop-filter: blur(8px) saturate(120%);
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 36px;
+  position: relative;
+  z-index: 10;
+}
+
+/* header logo text style */
+.logo {
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.logo h1 {
+  font-size:34px;
+  font-weight:800;
+  letter-spacing: -0.6px;
+}
+
+/* countdown pills look */
+.countdown-pill {
+  background: rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 8px 12px;
+  min-width:44px;
+  text-align:center;
+  font-weight:700;
+  box-shadow: inset 0 -3px 0 rgba(0,0,0,0.25);
+}
+
+/* search bar */
+.search {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin: 22px auto;
+  width: 60%;
+  min-width:260px;
+  background: rgba(255,255,255,0.03);
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* small legend chips */
+.legend {
+  display:flex;
+  gap:10px;
+  align-items:center;
+  margin-top:12px;
+}
+.legend span {
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  color: #eaeaea;
+}
+
+/* green rows like screenshot */
+.table-head {
+  display:grid;
+  grid-template-columns: 48px 1fr 140px 100px 100px;
+  gap:12px;
+  align-items:center;
+  padding:12px 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  color: #cfead9;
+  font-weight:700;
+}
+.table-row {
+  display:grid;
+  grid-template-columns: 48px 1fr 140px 100px 100px;
+  gap:12px;
+  align-items:center;
+  padding:16px 18px;
+  border-radius:6px;
+  margin-bottom:10px;
+  background: linear-gradient(90deg, rgba(12,116,69,1), rgba(11,111,66,0.95));
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+.pill {
+  background: rgba(255,255,255,0.06);
+  padding:8px 12px;
+  border-radius:12px;
+  min-width:40px;
+  text-align:center;
+  font-weight:700;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* small white total pill */
+.total-pill {
+  background: #fff;
+  color: #0b622f;
+  padding:10px 12px;
+  border-radius:10px;
+  font-weight:800;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* responsive tweaks */
+@media (max-width: 920px){
+  .table-head, .table-row {
+    grid-template-columns: 40px 1fr 100px 70px 70px;
+  }
+  .glass { padding: 20px; border-radius: 16px;}
+}

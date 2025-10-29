@@ -147,20 +147,20 @@ export default function LeaderboardPage() {
                   key={index}
                   className={`${getRowColor(user.score)} transition-all border-b border-gray-700 hover:scale-[1.01]`}
                 >
-                  <td className="py-3 px-2 sm:px-4 font-semibold">{index + 1}</td>
-                  <td className="py-3 px-2 sm:px-4 truncate max-w-[150px] sm:max-w-[220px]">
+                  <td className="py-3 px-2 sm:px-4 font-bold">{index + 1}</td>
+                  <td className="py-3 px-2 sm:px-4 truncate max-w-[150px] sm:max-w-[220px] ">
                     <a
                       href={user.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline font-medium"
+                      className="font-extrabold no-underline"
                     >
                       {user.name || "Unnamed Profile"}
                     </a>
                   </td>
-                  <td className="py-3 px-2 sm:px-4">{user.score}</td>
+                  <td className="py-3 px-2 sm:px-4 font-bold">{user.score}</td>
                   {/* <td className="py-3 px-2 sm:px-4">1</td> */}
-                  <td className="py-3 px-2 sm:px-4">{user.score >= 20 ? 20 : user.score}</td>
+                  <td className="py-3 px-2 sm:px-4 font-extrabold">{user.score >= 20 ? 20 : user.score}</td>
                 </tr>
               ))}
             </tbody>

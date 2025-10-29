@@ -17,7 +17,7 @@ export default function Page() {
       <div className="app-bg" aria-hidden="true"></div>
 
       <div className="mt-6">
-        <LeaderboardTable searchSelector="#search" />
+        <LeaderboardTable />
       </div>
 
       <Footer />

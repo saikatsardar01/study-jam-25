@@ -112,8 +112,9 @@ export default function LeaderboardPage() {
           {/* Legend */}
           <div className="flex flex-wrap justify-center gap-3 mt-6 text-xs sm:text-sm">
             <div className="flex items-center gap-1"><div className="w-3 h-3 bg-green-500 rounded-sm"></div> Completed</div>
-            <div className="flex items-center gap-1"><div className="w-3 h-3 bg-yellow-400 rounded-sm"></div> In Progress</div>
-            <div className="flex items-center gap-1"><div className="w-3 h-3 bg-blue-500 rounded-sm"></div> Not started</div>
+            <div className="flex items-center gap-1"><div className="w-3 h-3 bg-yellow-400 rounded-sm"></div> 1 Badge Left</div>
+            <div className="flex items-center gap-1"><div className="w-3 h-3 bg-blue-500 rounded-sm"></div> 18 Done</div>
+            <div className="flex items-center gap-1"><div className="w-3 h-3 bg-white rounded-sm"></div> Going Great</div>
             <div className="flex items-center gap-1"><div className="w-3 h-3 bg-red-500 rounded-sm"></div> Code Not Redeemed</div>
           </div>
         </div>
